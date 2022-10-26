@@ -1,19 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import productDetails from '../../data/productDetails';
 
 import "./Product.css";
 
+const handleTab = index => {
+    alert(index);
+}
+
 const Product = () => {
+    const [index, setIndex] = useState(0);
+
     return (
         <>
 
             {productDetails.map(product => (
                 <section className="section__product container">
                     <div className="product__container">
-                        <img src={product.src[0]} alt="shoes" />
+                        <img src={product.src[index]} alt="shoes" />
                         <div className="product__thumbnail__container">
-                            {product.src.map(thumbnail => (
-                                <img src={thumbnail} alt="" />
+                            {product.src.map((thumbnail, thumbnailId) => (
+                                <img src={thumbnail} alt="" id={thumbnailId}
+                                onClick={() => setIndex(thumbnailId)}
+                                />
                             ))}
                         </div>
                     </div>
