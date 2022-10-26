@@ -29,11 +29,11 @@ const Product = () => {
                         <span className='company__name'>Sneaker company</span>
                         <h1 className='product__title'>{product.title}</h1>
                         <p className='product__description'>{product.description}</p>
-                        <div>
-                            <span className='product__price'>{product.price}</span>
+                        <div className='product__price__sale'>
+                            <span className='product__price'>${product.price}.00</span>
                             <span className='product__sale'>50%</span>
-                            <span className='product__price--after'>{product.price*2}</span>
                         </div>
+                            <span className='product__price--after'>${product.price*2}.00</span>
                     </div>
                 </section>
             ))}

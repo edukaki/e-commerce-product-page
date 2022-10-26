@@ -34,9 +34,11 @@
 body {
   background-color: var(--white);
 
+  color: var(--dark-grayish-blue);
   font-family: var(--font-family);
   font-weight: var(--font-weight-general);
   font-size: var(--font-size-general);
+  letter-spacing: 1px;
 }
 
 .container {
