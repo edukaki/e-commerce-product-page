@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import productDetails from '../../data/productDetails';
 import BtnCart from '../BtnCart/BtnCart';
 import BtnCounter from '../BtnCounter';
+import ImgViewer from '../ImgViewer';
 
 import "./Product.css";
 
 const Product = () => {
-    const [index, setIndex] = useState(0);
-    
+
     const fromBtnCounter = () => {
 
     }
@@ -17,16 +17,7 @@ const Product = () => {
 
             {productDetails.map(product => (
                 <section className="section__product container">
-                    <div className="product__container">
-                        <img className="product__img--big" src={product.src[index]} alt="shoes" />
-                        <div className="product__thumbnail__container">
-                            {product.src.map((thumbnail, thumbnailId) => (
-                                <img src={thumbnail} alt="" id={thumbnailId}
-                                onClick={() => setIndex(thumbnailId)}
-                                />
-                            ))}
-                        </div>
-                    </div>
+                    <ImgViewer arr={product} />
                     <div className='product__container'>
                         <span className='company__name'>Sneaker company</span>
                         <h1 className='product__title'>{product.title}</h1>

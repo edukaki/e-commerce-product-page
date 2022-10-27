@@ -99,37 +99,3 @@
     justify-content: space-between;
     margin-top: 3rem;
 }
-
-.button__counter{
-    background-color: var(--light-grayish-blue);
-    font-size: 1.2rem;
-    border-radius: 10px;
-}
-
-.button__counter button{
-    background-color: transparent;
-    border: none;
-    color: var(--orange);
-    font-weight: var(--font-weight-strong);
-    padding: 1rem 1.8rem;
-    font-size: 1.5rem;
-    letter-spacing: -3px;
-}
-
-.button__add_cart{
-    background-color: var(--orange);
-    
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: var(--font-weight-strong);
-
-    padding: 0 6rem;
-
-    border: none;
-    border-radius: 10px;
-}
-
-.button__add_cart img{
-    margin-right: 1.5rem;
-    filter: brightness(0) invert(1);
-}
