@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 import productDetails from '../../data/productDetails';
+import BtnCart from '../BtnCart/BtnCart';
+import BtnCounter from '../BtnCounter';
 
 import "./Product.css";
 
-const handleTab = index => {
-    alert(index);
-}
-
 const Product = () => {
     const [index, setIndex] = useState(0);
+    
+    const fromBtnCounter = () => {
+
+    }
 
     return (
         <>
@@ -16,7 +18,7 @@ const Product = () => {
             {productDetails.map(product => (
                 <section className="section__product container">
                     <div className="product__container">
-                        <img src={product.src[index]} alt="shoes" />
+                        <img className="product__img--big" src={product.src[index]} alt="shoes" />
                         <div className="product__thumbnail__container">
                             {product.src.map((thumbnail, thumbnailId) => (
                                 <img src={thumbnail} alt="" id={thumbnailId}
@@ -34,6 +36,10 @@ const Product = () => {
                             <span className='product__sale'>50%</span>
                         </div>
                             <span className='product__price--after'>${product.price*2}.00</span>
+                            <div className='button__area'>
+                                <BtnCounter fromBtnCounter={fromBtnCounter} />
+                                <BtnCart text="Add to cart" />
+                            </div>
                     </div>
                 </section>
             ))}

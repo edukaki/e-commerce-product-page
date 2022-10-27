@@ -1,0 +1,15 @@
+.button__counter{
+    background-color: var(--light-grayish-blue);
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+.button__counter button{
+    background-color: transparent;
+    border: none;
+    color: var(--orange);
+    font-weight: var(--font-weight-strong);
+    padding: 1rem 1.8rem;
+    font-size: 1.5rem;
+    letter-spacing: -3px;
+}
