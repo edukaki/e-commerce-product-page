@@ -2,16 +2,27 @@ import React, { useState } from 'react'
 import './BtnCounter.css'
 
 
-export const BtnCounter = ({fromBtnCounter}) => {
-    let [count, setCount] =useState(0);
+export const BtnCounter = ({ toParent }) => {
+    let [count, setCount] = useState(0);
 
+    const handleChange = counter => {
+        toParent(counter)
+    }
+
+    handleChange(count);
     return (
         <div className='button__counter'>
             <button onClick={() => {
-                if (count > 0) { setCount(count - 1) }
+                if (count > 0) {
+                    setCount(count - 1);
+                    handleChange(count);
+                }
             }}>--</button>
             <span>{count}</span>
-            <button onClick={() => fromBtnCounter(setCount(count + 1))}>+</button>
+            <button onClick={() => {
+                setCount(count + 1);
+            }}
+            >+</button>
         </div>
     )
 }

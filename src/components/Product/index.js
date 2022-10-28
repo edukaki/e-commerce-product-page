@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import productDetails from '../../data/productDetails';
 import BtnCallAction from '../BtnCallAction';
 import BtnCounter from '../BtnCounter';
@@ -7,11 +7,11 @@ import cart from '../../svg/icon-cart.svg'
 
 import "./Product.css";
 
+
 const Product = () => {
+    const [counter, setCounter] = useState(0);
+    const [price, setPrice] = useState(0);
 
-    const fromBtnCounter = () => {
-
-    }
 
     return (
         <>
@@ -29,7 +29,7 @@ const Product = () => {
                         </div>
                             <span className='product__price--after'>${product.price*2}.00</span>
                             <div className='button__area'>
-                                <BtnCounter fromBtnCounter={fromBtnCounter} />
+                                <BtnCounter toParent={setCounter} />
                                 <BtnCallAction img={cart} alt="Cart icon" text="Add to cart" />
                             </div>
                     </div>
