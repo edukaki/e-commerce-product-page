@@ -34,4 +34,9 @@
     border-radius: 15px;
     border-style: solid;
     border-width: 2px;
+    cursor: pointer;
+}
+
+.active{
+    opacity: .5;
 }
