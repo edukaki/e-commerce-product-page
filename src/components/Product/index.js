@@ -1,6 +1,6 @@
 import React from 'react';
 import productDetails from '../../data/productDetails';
-import BtnCallAction from '../BtnCart';
+import BtnCallAction from '../BtnCallAction';
 import BtnCounter from '../BtnCounter';
 import ImgViewer from '../ImgViewer';
 import cart from '../../svg/icon-cart.svg'

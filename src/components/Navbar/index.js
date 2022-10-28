@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import cartIcon from "../../svg/icon-cart.svg";
 import "./Navbar.css"
+import Avatar from "../Avatar"
+import BtnCart from "../BtnCart"
+import img from "../../img/image-avatar.png"
 
 const Navbar = () => {
     const [show, setShow] = useState(false);
@@ -21,9 +23,9 @@ const Navbar = () => {
                     <Link onClick={() => showSwitch()} to="/about">About</Link>
                     <Link onClick={() => showSwitch()} to="/contact">Contact</Link>
                 </div>
-                <div className="nav-cart">
-                    <span>0</span>
-                    <Link onClick={() => showSwitch()} to="/cart"><img src={cartIcon} alt="cart icon" width="20" /></Link>
+                <div className="cart-avatar">
+                    <BtnCart />
+                    <Avatar img={img} />
                 </div>
                 <div onClick={() => showSwitch()} className={show ? "bars-button active" : "bars-button"}>
                     <span></span>
