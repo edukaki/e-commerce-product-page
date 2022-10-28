@@ -1,8 +1,9 @@
 import React from 'react';
 import productDetails from '../../data/productDetails';
-import BtnCart from '../BtnCart/BtnCart';
+import BtnCallAction from '../BtnCart';
 import BtnCounter from '../BtnCounter';
 import ImgViewer from '../ImgViewer';
+import cart from '../../svg/icon-cart.svg'
 
 import "./Product.css";
 
@@ -29,7 +30,7 @@ const Product = () => {
                             <span className='product__price--after'>${product.price*2}.00</span>
                             <div className='button__area'>
                                 <BtnCounter fromBtnCounter={fromBtnCounter} />
-                                <BtnCart text="Add to cart" />
+                                <BtnCallAction img={cart} alt="Cart icon" text="Add to cart" />
                             </div>
                     </div>
                 </section>

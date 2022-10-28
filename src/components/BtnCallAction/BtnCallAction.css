@@ -1,4 +1,4 @@
-.button__add_cart{
+.button__call_action{
     background-color: var(--orange);
     
     color: var(--white);
@@ -11,7 +11,7 @@
     border-radius: 10px;
 }
 
-.button__add_cart img{
+.button__call_action img{
     margin-right: 1.5rem;
     filter: brightness(0) invert(1);
 }
