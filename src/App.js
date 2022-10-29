@@ -16,18 +16,37 @@ function App() {
   const { productItems } = productDetails;
   const [cartItems, setCartItems] = useState([]);
 
+
+  // Scan the list of products in the shopping cart, if it exists, just add it to the existing one, 
+  // if not, add a new product to the cart
+  const handleAddProduct = (product, amount) => {
+    const ProductExist = cartItems.find((item) => item.id === product.id);
+    if(ProductExist){
+      setCartItems(
+        cartItems.map((item) => 
+        item.id === product.id 
+        ?{...ProductExist, quantity: ProductExist.quantity + amount} 
+        : item
+        )
+      );
+    } else{
+      setCartItems([...cartItems, {...product, quantity: amount}]);
+    }
+  }
+
   return (
-      <Router>
-        <Navbar cartItems={cartItems}/>
-        <Routes>
-          <Route exact path="/" element={ <Layout />} />
-          <Route index element={ <Product productItems={productItems} /> } />
-          <Route path="/men" element={ <Men />} />
-          <Route path="/women" element={ <Women />} />
-          <Route path="/about" element={ <About />} />
-          <Route path="/contact" element={ <Contact />} />
-        </Routes>
-      </Router>
+    <Router>
+      <Navbar cartItems={cartItems} handleAddProduct={handleAddProduct}/>
+      <Routes>
+        <Route exact path="/" element={<Layout />} />
+        <Route index element={<Product productItems={productItems} handleAddProduct={handleAddProduct} />} />
+        <Route path="/men" element={<Men />} />
+        <Route path="/women" element={<Women />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} />} />
+      </Routes>
+    </Router>
   );
 }
 
