@@ -7,7 +7,7 @@ import cartIcon from '../../svg/icon-cart.svg'
 import "./Product.css";
 
 
-const Product = ({productItems}) => {
+const Product = ({productItems, handleAddProduct}) => {
     const [quantity, setQuantity] = useState(1);
 
 
@@ -27,7 +27,7 @@ const Product = ({productItems}) => {
                             <span className='product__price--after'>${productItem.price*2}.00</span>
                             <div className='button__area'>
                                 <BtnQuantity quantity={quantity} setQuantity={setQuantity} />
-                                <BtnCallAction img={cartIcon} alt="Cart icon" text="Add to cart" />
+                                <button className='button__call_action' onClick={() => handleAddProduct(productItem,quantity)}><img src={cartIcon} alt="Cart Icon" /> Add to cart</button>
                             </div>
                     </div>
                 </section>
