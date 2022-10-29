@@ -5,7 +5,7 @@ import trash from "../../svg/icon-delete.svg"
 
 const BtnCart = ({ cartItems }) => {
     const [showCart, setShowCart] = useState(false);
-
+    
     return (
         <div className="nav-cart">
             <img src={cartIcon} alt='cart' width="20" onClick={() => setShowCart(!showCart)} />

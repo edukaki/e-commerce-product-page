@@ -13,3 +13,17 @@
     font-size: 1.5rem;
     letter-spacing: -3px;
 }
+
+@media screen and (max-width:1440px) {
+
+    .button__counter{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .button__counter button {
+        padding: 1.5rem 3rem;
+    }
+}

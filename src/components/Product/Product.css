@@ -68,5 +68,44 @@
 .button__area{
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 3rem;
+}
+
+@media screen and (max-width: 1440px) {
+
+    .button__area{
+        width: 80%;
+    }
+
+    .section__product{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product__container{
+        width: 100%;
+        align-items: center;
+    }
+
+    .button__call_action{
+        padding: 1.5rem 3rem;
+        width: 100%;
+        margin-top: 5%;
+    }
+
+    .product__price__sale{
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .button__area{
+        width: 100%;
+    }
+
+    .product__title{
+        font-size: 2.3rem;
+    }
 }

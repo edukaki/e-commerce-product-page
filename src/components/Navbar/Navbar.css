@@ -9,6 +9,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  padding: 5% auto;
 }
 
 .bars-button {
@@ -112,5 +113,18 @@
     position: absolute;
     transform: rotate(45deg);
     top: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .cart-avatar{
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .navbar{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 }

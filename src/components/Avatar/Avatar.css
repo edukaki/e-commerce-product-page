@@ -5,3 +5,9 @@
     border: solid 2px var(--orange);
     border-radius: 50%;
 }
+
+@media screen and (max-width:460px) {
+    .avatar{
+        display: none;
+    }
+}

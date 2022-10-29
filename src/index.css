@@ -48,5 +48,8 @@ button{
 .container {
   padding: 1% 7%;
 }
-/* @media screen and(max-width:1440px) {
-} */
+@media screen and(max-width:1440px) {
+  .container{
+    padding: none;
+  }
+}
