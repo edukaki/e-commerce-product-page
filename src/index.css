@@ -21,6 +21,8 @@
   --black-transparent: #00000090;
   --black: #000000;
 
+  --box-shadow-general: 0px 20px 50px -20px rgba(29, 32, 38, 0.503143);
+
   /* Typography */
   --font-family: "Kumbh Sans", sans-serif;
   --font-weight-strong: 700;

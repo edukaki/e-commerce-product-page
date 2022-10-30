@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
-import BtnCallAction from '../BtnCallAction';
+import React, { useState} from 'react';
 import BtnQuantity from '../BtnQuantity';
 import ImgViewer from '../ImgViewer';
 import cartIcon from '../../svg/icon-cart.svg'
+import { useParams } from 'react-router-dom';
 
 import "./Product.css";
+import '../BtnCallAction/BtnCallAction.css';
 
 
 const Product = ({productItems, handleAddProduct}) => {
     const [quantity, setQuantity] = useState(1);
-
-
+    const {id} = useParams();
+    const productItem = productItems[id-1];
     return (
         <>
-            {productItems.map(productItem => (
                 <section className="section__product container">
                     <ImgViewer arr={productItem} />
                     <div className='product__container'>
@@ -31,8 +31,6 @@ const Product = ({productItems, handleAddProduct}) => {
                             </div>
                     </div>
                 </section>
-            ))}
-
         </>
     )
 }

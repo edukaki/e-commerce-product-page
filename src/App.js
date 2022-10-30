@@ -8,14 +8,12 @@ import About from "./Pages/About"
 import Contact from "./Pages/Contact"
 import Collections from "./Pages/Collections"
 import Navbar from "./components/Navbar";
-import Product from "./components/Product"
-import Cart from "./Pages/Cart";
+import Product from "./components/Product";
 
 
 function App() {
   const { productItems } = productDetails;
   const [cartItems, setCartItems] = useState([]);
-
 
   // Scan the list of products in the shopping cart, if it exists, just add it to the existing one, 
   // if not, add a new product to the cart
@@ -57,12 +55,12 @@ function App() {
       <Navbar cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct}/>
       <Routes>
         <Route exact path="/" element={<Layout />} />
-        <Route index element={<Product productItems={productItems} handleAddProduct={handleAddProduct} />} />
-        <Route path="/men" element={<Men />} />
-        <Route path="/women" element={<Women />} />
+        <Route index element={<Collections productItems={productItems} handleAddProduct={handleAddProduct} />} />
+        <Route path="/men" element={<Men productItems={productItems} handleAddProduct={handleAddProduct} />} />
+        <Route path="/women" element={<Women productItems={productItems} handleAddProduct={handleAddProduct} />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} />} />
+        <Route path="/product/:collection/:id" element={<Product productItems={productItems} handleAddProduct={handleAddProduct} />} />
       </Routes>
     </Router>
   );
