@@ -37,7 +37,11 @@
     cursor: pointer;
 }
 
-.active{
+.product__thumbnail__container img.active{
+    opacity: .5;
+}
+
+.product__thumbnail__container img:hover{
     opacity: .5;
 }
 
