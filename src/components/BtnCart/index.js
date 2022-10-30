@@ -3,13 +3,20 @@ import "./BtnCart.css"
 import cartIcon from "../../svg/icon-cart.svg"
 import trash from "../../svg/icon-delete.svg"
 
-const BtnCart = ({ cartItems }) => {
+const BtnCart = ({ cartItems, handleRemoveProduct }) => {
     const [showCart, setShowCart] = useState(false);
+    let amountItems = 0;
+    amountItems = cartItems.map((item) => {
+        amountItems = amountItems + item.quantity;
+        return amountItems;
+    })
     
     return (
         <div className="nav-cart">
             <img src={cartIcon} alt='cart' width="20" onClick={() => setShowCart(!showCart)} />
-            <span className='nav-cart--counter'>0</span>
+            {amountItems > 0 ? <span className='nav-cart--counter'>{amountItems}</span> : ""
+            }
+            
             {showCart && (
                 <div className='btn__cart--show'>
                     <h3 className='cart__title'>Cart</h3>
@@ -26,7 +33,7 @@ const BtnCart = ({ cartItems }) => {
                                         <p>${item.price}.00 x {item.quantity} <strong>&nbsp;${item.price * item.quantity}</strong></p>
                                     </div>
                                 </div>
-                                <button className='cart__items__list--trash'><img src={trash} alt="Trash icon" /></button>
+                                <button className='cart__items__list--trash' onClick={() => handleRemoveProduct(item,true)}><img src={trash} alt="Trash icon" /></button>
                             </div>
 
                         </div>
