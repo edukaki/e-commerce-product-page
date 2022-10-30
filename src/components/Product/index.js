@@ -24,7 +24,7 @@ const Product = ({productItems, handleAddProduct}) => {
                             <span className='product__price'>${productItem.price*quantity}.00</span>
                             <span className='product__sale'>50%</span>
                         </div>
-                            <span className='product__price--after'>${productItem.price*2}.00</span>
+                            <span className='product__price--after'>${productItem.price*quantity*2}.00</span>
                             <div className='button__area'>
                                 <BtnQuantity quantity={quantity} setQuantity={setQuantity} />
                                 <button className='button__call_action' onClick={() => handleAddProduct(productItem,quantity)}><img src={cartIcon} alt="Cart Icon" /> Add to cart</button>
