@@ -1,8 +1,13 @@
 import React from 'react'
+import Gallery from '../components/Gallery'
+import Title from '../components/Title'
 
-const Collections = () => {
+const Collections = ({productItems, handleAddProduct}) => {
     return (
-        <div>Collections</div>
+        <>
+        <Title text="Collections" />
+        <Gallery productItems={productItems} handleAddProduct={handleAddProduct} collection="all" />
+        </>
     )
 }
 
