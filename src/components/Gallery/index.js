@@ -4,8 +4,8 @@ import cartIcon from "../../svg/icon-cart.svg"
 
 import "./Gallery.css"
 
-const Gallery = ({productItems, handleAddProduct}, collection) => {
-    const filter = productItems.filter((productItem) => productItem.collection === collection);
+const Gallery = ({productItems, handleAddProduct, collection}) => {
+    const filter = collection == "all" ? productItems : productItems.filter((productItem) => productItem.collection === collection);
     return (
         <section className='gallery container'>
             {filter.map((productItem) => (
