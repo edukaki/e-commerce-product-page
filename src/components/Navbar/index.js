@@ -5,7 +5,7 @@ import Avatar from "../Avatar"
 import BtnCart from "../BtnCart"
 import img from "../../img/image-avatar.png"
 
-const Navbar = ({ cartItems }) => {
+const Navbar = ({ cartItems, handleRemoveProduct }) => {
     const [show, setShow] = useState(false);
 
     function showSwitch() {
@@ -24,7 +24,7 @@ const Navbar = ({ cartItems }) => {
                     <Link onClick={() => showSwitch()} to="/contact">Contact</Link>
                 </div>
                 <div className="cart-avatar">
-                    <BtnCart cartItems={cartItems} />
+                    <BtnCart cartItems={cartItems} handleRemoveProduct={handleRemoveProduct} />
                     <Avatar img={img} />
                 </div>
                 <div onClick={() => showSwitch()} className={show ? "bars-button active" : "bars-button"}>

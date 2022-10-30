@@ -31,12 +31,30 @@ function App() {
       );
     } else{
       setCartItems([...cartItems, {...product, quantity: amount}]);
-    }
-  }
+    };
 
+    
+  }
+  
+  const handleRemoveProduct = (product, all) =>{
+    const ProductExist = cartItems.map((item) => item.id === product.id);
+    // To delete all elements
+    if(ProductExist && all === true){
+      setCartItems(cartItems.filter((item) => item.id !== product.id));
+    }
+    // To delete one by one
+    // else {
+    //   setCartItems((item) =>
+    //   item.id === product.id
+    //   ? {...ProductExist, quantity: ProductExist.quantity - 1}
+    //   : item
+    //   )
+    // }
+  }
+  
   return (
     <Router>
-      <Navbar cartItems={cartItems} handleAddProduct={handleAddProduct}/>
+      <Navbar cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct}/>
       <Routes>
         <Route exact path="/" element={<Layout />} />
         <Route index element={<Product productItems={productItems} handleAddProduct={handleAddProduct} />} />
@@ -44,7 +62,7 @@ function App() {
         <Route path="/women" element={<Women />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} />} />
+        <Route path="/cart" element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct} />} />
       </Routes>
     </Router>
   );
