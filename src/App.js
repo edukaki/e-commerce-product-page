@@ -9,6 +9,8 @@ import Contact from "./Pages/Contact"
 import Collections from "./Pages/Collections"
 import Navbar from "./components/Navbar";
 import Product from "./components/Product";
+import Footer from "./components/Footer";
+
 
 
 function App() {
@@ -62,6 +64,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/product/:collection/:id" element={<Product productItems={productItems} handleAddProduct={handleAddProduct} />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

@@ -15,13 +15,15 @@ const Navbar = ({ cartItems, handleRemoveProduct }) => {
     return (
         <>
             <div className="navbar container">
-                <div className="logo"></div>
-                <div className={show ? "links active" : "links"}>
-                    <Link onClick={() => showSwitch()} to="/">Collections</Link>
-                    <Link onClick={() => showSwitch()} to="/men">Men</Link>
-                    <Link onClick={() => showSwitch()} to="/women">Women</Link>
-                    <Link onClick={() => showSwitch()} to="/about">About</Link>
-                    <Link onClick={() => showSwitch()} to="/contact">Contact</Link>
+                <div className="logo_navbar">
+                    <div className="logo"></div>
+                    <div className={show ? "links active" : "links"}>
+                        <Link onClick={() => showSwitch()} to="/">Collections</Link>
+                        <Link onClick={() => showSwitch()} to="/men">Men</Link>
+                        <Link onClick={() => showSwitch()} to="/women">Women</Link>
+                        <Link onClick={() => showSwitch()} to="/about">About</Link>
+                        <Link onClick={() => showSwitch()} to="/contact">Contact</Link>
+                    </div>
                 </div>
                 <div className="cart-avatar">
                     <BtnCart cartItems={cartItems} handleRemoveProduct={handleRemoveProduct} />

@@ -1,0 +1,22 @@
+.footer{
+    position: static;
+    text-align: center;
+    font-size: 2rem;
+    padding: .5rem;
+    width: 100%;
+    bottom: 0;
+
+    background-color: var(--pale-orange);
+}
+
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7rem;
+}
+
+.social img{
+    width: 3rem;
+}
