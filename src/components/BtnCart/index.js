@@ -13,7 +13,7 @@ const BtnCart = ({ cartItems, handleRemoveProduct }) => {
 
     return (
         <div className="nav-cart">
-            <img src={cartIcon} alt='cart' width="20" onClick={() => setShowCart(!showCart)} />
+            <img className='nav-cart-icon' src={cartIcon} alt='cart' onClick={() => setShowCart(!showCart)} />
             {amountItems > 0 ? <span className='nav-cart--counter'>{amountItems}</span> : ""
             }
 
