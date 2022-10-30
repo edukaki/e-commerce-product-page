@@ -64,21 +64,31 @@
   .links {
     display: none;
   }
-
+  
   .links.active {
     align-items: center;
     background-color: var(--black-transparent);
-
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
 
-    height: 100vh;
+    
+    height: 100%;
     width: 100%;
-
+    
     position: absolute;
     left: 0;
     top: 0;
+    
+    z-index: 100;
+  }
+  
+  .links.active a{
+    color: var(--white);
+    font-weight: var(--font-weight-strong);
+    font-size: 1.5rem;
+    padding: 1.5rem;
   }
 
   .bars-button {
@@ -89,7 +99,7 @@
     position: absolute;
     right: 1rem;
     width: 50px;
-    z-index: 4;
+    z-index: 101;
   }
 
   .bars-button span {
