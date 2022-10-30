@@ -1,0 +1,21 @@
+.gallery__title__container{
+    display: flex;
+    justify-content: center;
+}
+
+.gallery__title{
+    display: inline-block;
+
+    text-align: center;
+    padding: 2rem 4rem;
+
+    font-size: 4rem;
+
+    border-bottom: 3px solid var(--dark-grayish-blue);
+}
+
+@media screen and (max-width:768px) {
+    .gallery__title{
+        font-size: 2rem;
+    }
+}
