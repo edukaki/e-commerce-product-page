@@ -30,7 +30,7 @@
     font-weight: var(--font-weight-strong);
 }
 
-.button__call_action{
+.button__call_action--gallery{
     display: flex;
     align-items: center;
     justify-content: center;

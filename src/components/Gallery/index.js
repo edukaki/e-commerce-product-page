@@ -15,7 +15,7 @@ const Gallery = ({productItems, handleAddProduct, collection}) => {
                     </Link>
                     <span className='product__card__title'>{productItem.title}</span>
                     <span className='product__card__price'>${productItem.price}</span>
-                    <button className='button__call_action' onClick={() => handleAddProduct(productItem,1)}><img src={cartIcon} alt="Cart Icon" /> Add to cart</button>
+                    <button className='button__call_action--gallery' onClick={() => handleAddProduct(productItem,1)}><img src={cartIcon} alt="Cart Icon" /> Add to cart</button>
                 </div>
             ))}
         </section>
