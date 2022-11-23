@@ -5,10 +5,9 @@ import trash from "../../svg/icon-delete.svg"
 
 const BtnCart = ({ cartItems, handleRemoveProduct }) => {
     const [showCart, setShowCart] = useState(false);
-    let amountItems = 0;
-    amountItems = cartItems.map((item) => {
-        amountItems = amountItems + item.quantity;
-        return amountItems;
+    let amountItems = 0
+    cartItems.map((item) => {
+        amountItems = amountItems + item.quantity
     })
 
     return (
